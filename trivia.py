@@ -360,7 +360,7 @@ class Trivia(commands.Cog):
         await ctx.send(_("Trivia stopped."))
 
     @trivia.command(name="list")
-    async def trivia_list(self, ctx: commands.Context):
+    async def trivia_list(self, ctx: commands.Context, *categories: str):
         """List available trivia categories."""
         lists = set(p.stem for p in self._all_lists())
         if await ctx.embed_requested():
